@@ -1,5 +1,4 @@
 module.exports = {
     usuarios: [],
+    tarefas: []
 }
-
-console.log(this.usuarios)
