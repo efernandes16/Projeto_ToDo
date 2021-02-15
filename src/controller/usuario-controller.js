@@ -17,7 +17,7 @@ module.exports = (app, bd) => {
   app.get('/usuarios/:id', async (req, res)=> {
     let parametro = req.params.id;
     try {
-      const mostraUsuarioUnico = await usuariosDao.sendPamamsUsuarios(parametro)
+      const mostraUsuarioUnico = await usuariosDao.buscarUsuarioUnico(parametro)
       res.send(mostraUsuarioUnico);
     } catch {
       res.send(erro);

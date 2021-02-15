@@ -1,4 +1,3 @@
-
 module.exports = class UsuariosDAO  
 {
     constructor(bd)
@@ -11,18 +10,18 @@ module.exports = class UsuariosDAO
         return new Promise((resolve, reject) =>
         {
             this.bd.all('SELECT * FROM USUARIOS', (erro, linhas) => {
-                if(erro) reject ("Erro na consulta do banco");
+                if(erro) reject ("Erro na consulta ao banco");
                 else resolve(linhas)
               })
         })
     }
 
-    sendPamamsUsuarios(parametro)
+    buscarUsuarioUnico(parametro)
     {
         return new Promise((resolve, reject) => 
         {
             this.bd.get('SELECT * FROM USUARIOS WHERE id = ?', parametro, (erro, linhas) =>{
-                if(erro) reject ("Erro na consulta do banco");
+                if(erro) reject ("Erro na consulta ao banco");
                 else resolve(linhas);
               })
         })
@@ -35,6 +34,7 @@ module.exports = class UsuariosDAO
             this.bd.run('INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)', parametro, (erro, linhas) => {
                 if(erro) reject('Erro ao inserir usuario');
                 else resolve('Usuario inserido com sucesso');
+                console.log(linhas)
               })
         })
     }
@@ -44,11 +44,8 @@ module.exports = class UsuariosDAO
         return new Promise((resolve, reject) =>
         {
             this.bd.run('DELETE FROM USUARIOS WHERE ID = ?', parametro, (erro, linhas) => {
-                if(erro) {
-                  reject('Erro ao inserir usuario')
-                } else {
-                  resolve('Usuario removido com sucesso');
-                }
+                if(erro) reject('Erro ao deletar usuario')
+                else resolve('Usuario removido com sucesso');
               })
         })
     }
