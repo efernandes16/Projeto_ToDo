@@ -27,15 +27,13 @@ module.exports = class TarefasDAO
         })
     }
 
-    //Diz que insere mas campos estão com null
-    insereTarefas(parametro)
+    insereTarefas(valores)
     {
         return new Promise((resolve, reject) =>
         {
-            this.bd.run('INSERT INTO TAREFAS (TITULO, DESCRICAO, STATUS, DATACRIACAO, ID_USUARIO) VALUES (?, ?, ?, ?, ?)', parametro, (erro, linhas) => {
-                if(erro) reject('Erro ao inserir tarefa');
+            this.bd.run('INSERT INTO TAREFAS (TITULO, DESCRICAO, STATUS, DATACRIACAO, ID_USUARIO) VALUES (?, ?, ?, ?, ?)', valores, (error) => {
+                if(error) reject('Erro ao inserir tarefa');
                 else resolve('Tarefa inserida com sucesso');
-                console.log(linhas)
             })
         })
     }
@@ -51,14 +49,13 @@ module.exports = class TarefasDAO
         })
     }
 
-    //Não ta funcionando
-    atualizarTarefas(parametro)
+    atualizaTarefas(valores)
     {
         return new Promise((resolve, reject) =>
         {
-            this.bd.run('UPDATE TAREFAS SET ID = ?, titulo = ?, descricao = ?, status = ?, datacriacao = ?, id_usuario = ?', parametro, (erro, linhas) => {
+            this.bd.run('UPDATE TAREFAS SET titulo = ?, descricao = ?, status = ?, datacriacao = ?, id_usuario = ? WHERE id = ?', valores, (erro) => {
                 if(erro) reject('Erro ao atualizar tarefa')
-                else resolve('Tarefa atualizada com sucesso')
+                else resolve(`Tarefa atualizada com sucesso`)
             })
         })
     }

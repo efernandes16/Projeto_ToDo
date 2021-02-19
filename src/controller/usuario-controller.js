@@ -7,33 +7,33 @@ module.exports = (app, bd) => {
   app.get('/usuarios', async (req, res) => {
 
     try {
-        const mostraUsuario = await usuariosDao.todosUsuarios()
-        res.send(mostraUsuario);
+      const mostraUsuario = await usuariosDao.todosUsuarios()
+      res.send(mostraUsuario);
     } catch {
       res.send(erro);
-    }  
+    }
   });
 
-  app.get('/usuarios/:id', async (req, res)=> {
+  app.get('/usuarios/:id', async (req, res) => {
     let parametro = req.params.id;
     try {
       const mostraUsuarioUnico = await usuariosDao.buscarUsuarioUnico(parametro)
       res.send(mostraUsuarioUnico);
     } catch {
       res.send(erro);
-    }  
+    }
   });
 
   app.post('/usuarios', async (req, res) => {
-    let parametro = [req.body.nome, req.body.email, req.body.senha]
+    let valores = [req.body.nome, req.body.email, req.body.senha]
     try {
-      const insereUsuario = await usuariosDao.insereUsuarios(parametro)
+      const insereUsuario = await usuariosDao.insereUsuarios(valores)
       res.send(insereUsuario);
     } catch {
       res.send(erro);
-    }  
+    }
   });
-  
+
   app.delete('/usuarios/:id', async (req, res) => {
     let parametro = req.params.id;
     try {
@@ -41,17 +41,17 @@ module.exports = (app, bd) => {
       res.send(deletaUsuarioUnico);
     } catch {
       res.send(erro);
-    }  
+    }
   });
 
   app.put('/usuarios/:id', async (req, res) => {
-    let parametro = [req.body.id, req.body.nome, req.body.email, req.body.senha, req.params.id]
-      try {
-        const atualizaUsuario = await usuariosDao.atualizaUsuario(parametro)
-        res.send(atualizaUsuario);
+    let valores = [req.body.nome, req.body.email, req.body.senha, req.params.id]
+    try {
+      const atualizaUsuario = await usuariosDao.atualizaUsuarios(valores)
+      res.send(atualizaUsuario);
     } catch {
       res.send(erro);
-    }  
+    }
   });
 
 }

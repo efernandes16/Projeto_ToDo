@@ -27,14 +27,13 @@ module.exports = class UsuariosDAO
         })
     }
 
-    insereUsuarios(parametro)
+    insereUsuarios(valores)
     {
         return new Promise((resolve, reject) =>
         {
-            this.bd.run('INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)', parametro, (erro, linhas) => {
+            this.bd.run('INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)', valores, (erro) => {
                 if(erro) reject('Erro ao inserir usuario');
                 else resolve('Usuario inserido com sucesso');
-                console.log(linhas)
               })
         })
     }
@@ -50,11 +49,11 @@ module.exports = class UsuariosDAO
         })
     }
 
-    atualizaUsuario(parametro)
+    atualizaUsuarios(valores)
     {
         return new Promise((resolve, reject) =>
         {
-            this.bd.run('UPDATE USUARIOS SET ID = ?, nome = ?, email = ?, senha = ? WHERE id = ?', parametro, (erro, linhas) => {
+            this.bd.run('UPDATE USUARIOS SET nome = ?, email = ?, senha = ? WHERE id = ?', valores, (erro) => {
                 if(erro) reject('Erro ao atualizar usuario')
                 else resolve('Usuario atualizado com sucesso');
               })
