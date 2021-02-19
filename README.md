@@ -41,56 +41,45 @@ Verbos HTTP REST:
 
 <h3>Para USUÁRIOS:</h3>
 
-Para <strong>listar</strong> todos os usuários:
-<li> Verbo HTTP: <strong>GET</strong> </li>
-<li><a>http://localhost:8080/usuarios</a></li>
-<br>
+Para <strong>listar</strong> todos os usuários:<br>
+Verbo HTTP: <strong>GET</strong> <br>
+Rota: <a>http://localhost:8080/usuarios</a> <br>
 
-Para <strong>listar</strong> um único usuário:
-<li> Verbo HTTP: <strong>GET</strong> </li>
-<li><a>http://localhost:8080/usuarios/id</a></li>
-<br>
+Para <strong>listar</strong> um único usuário: <br>
+Verbo HTTP: <strong>GET</strong> <br>
+Rota: <a>http://localhost:8080/usuarios/id</a> <br>
 
-Para <strong>inserir</strong> novos usuários:
-<li> Verbo HTTP: <strong>POST</strong> </li>
-<li><a>http://localhost:8080/usuarios</a></li>
-<br>
+Para <strong>inserir</strong> novos usuários: <br>
+Verbo HTTP: <strong>POST</strong> <br>
+Rota: <a>http://localhost:8080/usuarios</a> <br>
 
-Para <strong>deletar</strong> um usuário:
-<li> Verbo HTTP: <strong>DELETE</strong> </li>
-<li><a>http://localhost:8080/usuarios/id</a></li>
-<br>
+Para <strong>deletar</strong> um usuário:<br>
+Verbo HTTP: <strong>DELETE</strong> <br>
+Rota: <a>http://localhost:8080/usuarios/id</a> <br>
 
-Para <strong>atualizar</strong> qualquer registro de um usuário:
-<li> Verbo HTTP: <strong>PUT</strong> </li>
-<li><a>http://localhost:8080/usuarios/id</a></li>
-<br>
+Para <strong>atualizar</strong> qualquer registro de um usuário:<br>
+Verbo HTTP: <strong>PUT</strong> <br>
+Rota: <a>http://localhost:8080/usuarios/id</a> <br>
 
 <h3>Para TAREFAS:</h3>
 
-Para <strong>listar</strong> todas as tarefas
-<li> Verbo HTTP: <strong>GET</strong> </li>
-<li><a>http://localhost:8080/tarefas</a></li>
-<br>
+Para <strong>listar</strong> todas as tarefas: <br>
+Verbo HTTP: <strong>GET</strong> <br>
+Rota: <a>http://localhost:8080/tarefas</a> <br>
 
-Para <strong>listar</strong> uma única tarefa:
-<li> Verbo HTTP: <strong>GET</strong> </li>
-<li><a>http://localhost:8080/tarefas/id</a></li>
-<br>
+Para <strong>listar</strong> uma única tarefa: <br>
+Verbo HTTP: <strong>GET</strong> <br>
+Rota: <a>http://localhost:8080/tarefas/id</a> <br>
 
-Para <strong>inserir</strong> novas tarefas:
-<li> Verbo HTTP: <strong>POST</strong> </li>
-<li><a>http://localhost:8080/tarefas</a></li>
-<br>
+Para <strong>inserir</strong> novas tarefas: <br>
+Verbo HTTP: <strong>POST</strong> <br>
+Rota: <a>http://localhost:8080/tarefas</a> <br>
 
-Para <strong>deletar</strong> uma tarefa:
-<li> Verbo HTTP: <strong>DELETE</strong> </li>
-<li><a>http://localhost:8080/tarefas/id</a></li>
-<br>
+Para <strong>deletar</strong> uma tarefa: <br>
+Verbo HTTP: <strong>DELETE</strong> <br>
+Rota: <a>http://localhost:8080/tarefas/id</a> <br>
 
-Para <strong>atualizar</strong> qualquer registro de uma tarefa:
-<li> Verbo HTTP: <strong>PUT</strong> </li>
-<li><a>http://localhost:8080/tarefas/id</a></li>
-<br>
-
+Para <strong>atualizar</strong> qualquer registro de uma tarefa: <br>
+Verbo HTTP: <strong>PUT</strong> <br>
+Rota: <a>http://localhost:8080/tarefas/id</a> <br>
 #
